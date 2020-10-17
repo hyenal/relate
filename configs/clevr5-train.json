@@ -1,0 +1,39 @@
+{
+    "gpu_idx": 0,
+    "resume":true,
+    "visualize_interval": 0,
+    "num_workers": 8,
+    "batch_size":64,
+    "exp_dir":"experiments/CLEVR5",
+    "default_opts":{
+        "model":"relate_static",
+        "dataset":"clevr-obc"
+    },
+    "DATASET":{
+        "data_root":"data/CLEVR5",
+        "TRAIN":{
+            "seq_len":1,
+            "image_size":128
+        }
+    },
+    "SOLVER":{
+        "lr":0.0001,
+        "max_epochs":40,
+        "group_params": {"gen":{"num_iter":2}, "disc":{"num_iter":1}}
+    },
+    "MODEL":{
+        "n_objects":5,
+        "min_obj_num":3,
+        "loss_weights":{
+            "l_gen": 1.0,
+            "l_gen_eval": 1.0,
+            "l_disc": 1.0,
+            "l_style_gen":1.0,
+            "l_style_disc":1.0,
+            "l_style_gen_eval":0.0,
+            "l_xy":1.0
+        },
+        "backgd_dim": 1,
+        "obj_dim": 20
+    }
+}

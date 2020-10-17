@@ -1,0 +1,41 @@
+{
+    "gpu_idx": 0,
+    "resume":true,
+    "visualize_interval": 0,
+    "num_workers": 8,
+    "batch_size":32,
+    "exp_dir":"experiments/cars_real_traffic-video",
+    "default_opts":{
+        "model":"relate_video",
+        "dataset":"cars_real_traffic"
+    },
+    "DATASET":{
+        "data_root":"data/cars_real_traffic",
+        "TRAIN":{
+            "seq_len":10,
+            "image_size":128
+        }
+    },
+    "SOLVER":{
+        "lr":0.0001,
+        "max_epochs":20,
+        "group_params": {"gen":{"num_iter":2}, "disc":{"num_iter":1}}
+    },
+    "MODEL":{
+        "seq_len":10,
+        "obj_size":6,
+        "n_objects":5,
+        "min_obj_num":1,
+        "loss_weights":{
+            "l_gen": 1.0,
+            "l_gen_eval": 1.0,
+            "l_disc": 1.0,
+            "l_style_gen":1.0,
+            "l_style_disc":1.0,
+            "l_style_gen_eval":0.0,
+            "l_xy":1.0
+        },
+        "backgd_dim": 1,
+        "obj_dim": 20
+    }
+}
