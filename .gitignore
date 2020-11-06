@@ -5,3 +5,6 @@ __pycache__/
 # local data directory
 data/*
 experiments/*
+
+# editors
+.vscode/*
