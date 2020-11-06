@@ -86,6 +86,11 @@ For convenience, we provide a script to resize the all the images to any desired
 ### Generation of Video Samples
 In order to generate video samples, you can use the following experiment config as an example: `configs/cars_real_traffic-video-eval.json`. This will sample 500 videos from a temporal RELATE model and save them as GIFs.
 
+### Evaluation of Video Samples (FVD)
+
+The evaluation script for RELATE's temporal extension can be found in the [extras](extras) directory.
+Please refer to the separate [README](extras/README.md) there on how to set up and use the FVD metric.
+
 
 ## Citation
 If you use this work for your research please consider citing us:
